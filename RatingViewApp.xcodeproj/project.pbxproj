@@ -15,6 +15,7 @@
 		3D67788827A31AD400AA93A8 /* RatingViewAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D67788727A31AD400AA93A8 /* RatingViewAppTests.swift */; };
 		3D67789227A31AD400AA93A8 /* RatingViewAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D67789127A31AD400AA93A8 /* RatingViewAppUITests.swift */; };
 		3D67789427A31AD400AA93A8 /* RatingViewAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D67789327A31AD400AA93A8 /* RatingViewAppUITestsLaunchTests.swift */; };
+		3D6778A427A335C400AA93A8 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6778A327A335C400AA93A8 /* RatingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		3D67788D27A31AD400AA93A8 /* RatingViewAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RatingViewAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D67789127A31AD400AA93A8 /* RatingViewAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewAppUITests.swift; sourceTree = "<group>"; };
 		3D67789327A31AD400AA93A8 /* RatingViewAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3D6778A327A335C400AA93A8 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +99,10 @@
 		3D67786F27A31AD200AA93A8 /* RatingViewApp */ = {
 			isa = PBXGroup;
 			children = (
-				3D67787027A31AD200AA93A8 /* AppDelegate.swift */,
-				3D67787227A31AD200AA93A8 /* SceneDelegate.swift */,
-				3D67787427A31AD200AA93A8 /* ViewController.swift */,
-				3D67787927A31AD400AA93A8 /* Assets.xcassets */,
-				3D67787B27A31AD400AA93A8 /* LaunchScreen.storyboard */,
 				3D67787E27A31AD400AA93A8 /* Info.plist */,
+				3D67787B27A31AD400AA93A8 /* LaunchScreen.storyboard */,
+				3D6778A227A3356B00AA93A8 /* Resources */,
+				3D6778A127A3356200AA93A8 /* Sources */,
 			);
 			path = RatingViewApp;
 			sourceTree = "<group>";
@@ -122,6 +122,33 @@
 				3D67789327A31AD400AA93A8 /* RatingViewAppUITestsLaunchTests.swift */,
 			);
 			path = RatingViewAppUITests;
+			sourceTree = "<group>";
+		};
+		3D6778A027A3355800AA93A8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3D6778A327A335C400AA93A8 /* RatingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3D6778A127A3356200AA93A8 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				3D6778A027A3355800AA93A8 /* Views */,
+				3D67787027A31AD200AA93A8 /* AppDelegate.swift */,
+				3D67787227A31AD200AA93A8 /* SceneDelegate.swift */,
+				3D67787427A31AD200AA93A8 /* ViewController.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		3D6778A227A3356B00AA93A8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3D67787927A31AD400AA93A8 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +284,7 @@
 				3D67787527A31AD200AA93A8 /* ViewController.swift in Sources */,
 				3D67787127A31AD200AA93A8 /* AppDelegate.swift in Sources */,
 				3D67787327A31AD200AA93A8 /* SceneDelegate.swift in Sources */,
+				3D6778A427A335C400AA93A8 /* RatingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
