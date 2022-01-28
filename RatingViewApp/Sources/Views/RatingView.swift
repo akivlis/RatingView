@@ -113,9 +113,12 @@ private extension RatingView {
 
     func selectStars(count: Int) {
         for (index, starView) in stackView.arrangedSubviews.enumerated() {
-            guard index < count else { return }
             guard let starView = starView as? UIImageView else { return }
-            starView.image = UIImage(systemName: "star.fill")
+            if index < count {
+                starView.image = Constants.StarView.SelectedImage
+            } else {
+                starView.image = Constants.StarView.EmptyImage
+            }
         }
     }
 }

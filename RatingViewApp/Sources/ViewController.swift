@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     private var subscriptions: Set<AnyCancellable> = []
 
     private let movieRatingView: RatingView = {
-        let ratingView = RatingView(allStars: 5, selectedStars: 1)
+        let ratingView = RatingView(allStars: 5, selectedStars: 3)
         return ratingView
     }()
 
