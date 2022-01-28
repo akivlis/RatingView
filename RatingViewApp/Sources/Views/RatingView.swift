@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class RatingView: UIView {
 
@@ -16,7 +17,16 @@ class RatingView: UIView {
             static let EmptyImage = UIImage(systemName: "star")
             static let SelectedImage = UIImage(systemName: "star.fill")
         }
+
+        static let maxStarCount = 10
+        static let minStarCount = 3
     }
+
+    // MARK: - Combine
+
+    private lazy var ratingHasChangedSubject = PassthroughSubject<Int, Never>()
+    private(set) lazy var ratingHasChangedPublisher = ratingHasChangedSubject
+        .eraseToAnyPublisher()
 
     // MARK: - Views
 
@@ -30,7 +40,7 @@ class RatingView: UIView {
 
     // MARK: - Getters & Setters
 
-    var allStars: Int = 3 {
+    private(set) var allStars: Int = 3 {
         didSet {
             createStarViews(count: allStars)
         }
@@ -39,20 +49,31 @@ class RatingView: UIView {
     var selectedStars: Int = 0 {
         didSet {
             selectStars(count: selectedStars)
+            ratingHasChangedSubject.send(selectedStars)
         }
     }
 
 
     // MARK: - Init
 
-    init() {
+    init(allStars: Int = 3, selectedStars: Int = 0) {
         super.init(frame: .zero)
         setupViews()
         setupConstraints()
         setupBindings()
 
-        createStarViews(count: allStars)
-        selectStars(count: selectedStars)
+        // set min to 3 and max to 10
+        if allStars < Constants.minStarCount {
+            self.allStars = Constants.minStarCount
+        } else if allStars > Constants.maxStarCount {
+            self.allStars = Constants.maxStarCount
+        } else {
+            self.allStars = allStars
+        }
+        self.selectedStars = selectedStars
+
+        createStarViews(count: self.allStars)
+        selectStars(count: self.selectedStars)
     }
 
     required init?(coder: NSCoder) {
@@ -99,12 +120,5 @@ private extension RatingView {
     }
 }
 
-extension UIView {
-    func removeAllSubviews() {
-        for view in subviews {
-            view.removeFromSuperview()
-        }
-    }
-}
 
 

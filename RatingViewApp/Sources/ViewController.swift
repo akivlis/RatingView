@@ -6,39 +6,49 @@
 //
 
 import UIKit
+import Combine
 
 class ViewController: UIViewController {
 
+    private var subscriptions: Set<AnyCancellable> = []
+
     private let movieRatingView: RatingView = {
-        let ratingView = RatingView()
-        ratingView.allStars = 5
-        ratingView.selectedStars = 1
+        let ratingView = RatingView(allStars: 5, selectedStars: 1)
         return ratingView
     }()
 
     private let foodRatingView: RatingView = {
         let ratingView = RatingView()
-        ratingView.allStars = 3
         ratingView.selectedStars = 7
         return ratingView
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
 
-        view.backgroundColor = .systemPink
+        setupViews()
+        setupConstraints()
+        setupBindings()
+
+        movieRatingView.selectedStars = 2
+    }
+}
+
+private extension ViewController {
+
+    func setupViews() {
+        view.backgroundColor = .white
 
         view.addSubview(movieRatingView)
         view.addSubview(foodRatingView)
+    }
 
-
+    func setupConstraints() {
         movieRatingView.translatesAutoresizingMaskIntoConstraints = false
         movieRatingView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         movieRatingView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         movieRatingView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 200).isActive = true
         movieRatingView.heightAnchor.constraint(equalToConstant: 100).isActive = true
-
 
         foodRatingView.translatesAutoresizingMaskIntoConstraints = false
         foodRatingView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
@@ -47,6 +57,12 @@ class ViewController: UIViewController {
         foodRatingView.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
 
-
+    func setupBindings() {
+        movieRatingView.ratingHasChangedPublisher
+            .sink { rank in
+                print("⭐️ ranking has changed to: \(rank)")
+            }
+            .store(in: &subscriptions)
+    }
 }
 

@@ -16,6 +16,7 @@
 		3D67789227A31AD400AA93A8 /* RatingViewAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D67789127A31AD400AA93A8 /* RatingViewAppUITests.swift */; };
 		3D67789427A31AD400AA93A8 /* RatingViewAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D67789327A31AD400AA93A8 /* RatingViewAppUITestsLaunchTests.swift */; };
 		3D6778A427A335C400AA93A8 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6778A327A335C400AA93A8 /* RatingView.swift */; };
+		3D6778A627A4061100AA93A8 /* UIView+RatingViewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6778A527A4061100AA93A8 /* UIView+RatingViewApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		3D67789127A31AD400AA93A8 /* RatingViewAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewAppUITests.swift; sourceTree = "<group>"; };
 		3D67789327A31AD400AA93A8 /* RatingViewAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3D6778A327A335C400AA93A8 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		3D6778A527A4061100AA93A8 /* UIView+RatingViewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+RatingViewApp.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				3D67787027A31AD200AA93A8 /* AppDelegate.swift */,
 				3D67787227A31AD200AA93A8 /* SceneDelegate.swift */,
 				3D67787427A31AD200AA93A8 /* ViewController.swift */,
+				3D6778A527A4061100AA93A8 /* UIView+RatingViewApp.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D6778A627A4061100AA93A8 /* UIView+RatingViewApp.swift in Sources */,
 				3D67787527A31AD200AA93A8 /* ViewController.swift in Sources */,
 				3D67787127A31AD200AA93A8 /* AppDelegate.swift in Sources */,
 				3D67787327A31AD200AA93A8 /* SceneDelegate.swift in Sources */,
